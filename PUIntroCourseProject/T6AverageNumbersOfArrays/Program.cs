@@ -22,13 +22,12 @@ namespace T6AverageNumbersOfArrays
             Console.WriteLine("Enter the length of the array: ");
             int k = int.Parse(Console.ReadLine());
             int[] nums = new int[k];
-            for (int i = 0; i < nums.Length; i++)
-            {
-                Console.WriteLine("Num[" + i + "]= ");
-                nums[i] = int.Parse(Console.ReadLine());
-            }
+
+            T6Utils.PrintArrayItems(nums);
+
             Console.Write("The array is: ");
             T6Utils.PrintArray(nums);
+
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------------------------------");
             Console.WriteLine("The average number of these numbers which are in an interval of -100 to 100 is: " + T6Utils.GetAverageNumber(nums));
@@ -41,11 +40,8 @@ namespace T6AverageNumbersOfArrays
             Console.WriteLine("Enter the numbers of the array A: ");
             int[] A = new int[n];
 
-            for (int i = 0; i < A.Length; i++)
-            {
-                Console.WriteLine("Num[" + i + "]= ");
-                A[i] = int.Parse(Console.ReadLine());
-            }
+            T6Utils.PrintArrayItems(A);
+
             Console.Write("The average number of the array A is: " + T6Utils.GetAverageNumber(A));
 
 
@@ -55,11 +51,8 @@ namespace T6AverageNumbersOfArrays
 
             int[] B = new int[n];
 
-            for (int i = 0; i < B.Length; i++)
-            {
-                Console.WriteLine("Num[" + i + "]= ");
-                B[i] = int.Parse(Console.ReadLine());
-            }
+            T6Utils.PrintArrayItems(B);
+
             Console.Write("The average number of the array B is: " + T6Utils.GetAverageNumber(B));
 
 
@@ -69,11 +62,8 @@ namespace T6AverageNumbersOfArrays
 
             int[] C = new int[n];
 
-            for (int i = 0; i < C.Length; i++)
-            {
-                Console.WriteLine("Num[" + i + "]= ");
-                C[i] = int.Parse(Console.ReadLine());
-            }
+            T6Utils.PrintArrayItems(C);
+
             Console.Write("The average number of the array C is: " + T6Utils.GetAverageNumber(C));
             Console.WriteLine();
             Console.WriteLine();

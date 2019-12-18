@@ -33,5 +33,14 @@ namespace T6AverageNumbersOfArrays
                 Console.Write(i + "  ");
             }
         }
+
+        public static void PrintArrayItems(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine("Num[" + i + "]= ");
+                array[i] = int.Parse(Console.ReadLine());
+            }
+        }
     }
 }
