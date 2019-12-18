@@ -28,16 +28,12 @@ namespace T6AverageNumbersOfArrays
                 nums[i] = int.Parse(Console.ReadLine());
             }
             Console.Write("The array is: ");
-            PrintArray(nums);
+            T6Utils.PrintArray(nums);
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------------------------------");
-            Console.WriteLine("The average number of these numbers which are in an interval of -100 to 100 is: " + GetAverageNumber(nums));
+            Console.WriteLine("The average number of these numbers which are in an interval of -100 to 100 is: " + T6Utils.GetAverageNumber(nums));
             
             Console.WriteLine("**********************************************************************");
-
-
-
-
 
             Console.WriteLine("Enter the length of the three arrays A, B and C:");
             int n = int.Parse(Console.ReadLine());
@@ -50,7 +46,7 @@ namespace T6AverageNumbersOfArrays
                 Console.WriteLine("Num[" + i + "]= ");
                 A[i] = int.Parse(Console.ReadLine());
             }
-            Console.Write("The average number of the array A is: " + GetAverageNumber(A));
+            Console.Write("The average number of the array A is: " + T6Utils.GetAverageNumber(A));
 
 
             Console.WriteLine();
@@ -64,7 +60,7 @@ namespace T6AverageNumbersOfArrays
                 Console.WriteLine("Num[" + i + "]= ");
                 B[i] = int.Parse(Console.ReadLine());
             }
-            Console.Write("The average number of the array B is: " + GetAverageNumber(B));
+            Console.Write("The average number of the array B is: " + T6Utils.GetAverageNumber(B));
 
 
             Console.WriteLine();
@@ -78,21 +74,21 @@ namespace T6AverageNumbersOfArrays
                 Console.WriteLine("Num[" + i + "]= ");
                 C[i] = int.Parse(Console.ReadLine());
             }
-            Console.Write("The average number of the array C is: " + GetAverageNumber(C));
+            Console.Write("The average number of the array C is: " + T6Utils.GetAverageNumber(C));
             Console.WriteLine();
             Console.WriteLine();
 
-            if (GetAverageNumber(A) > GetAverageNumber(B) && GetAverageNumber(A) > GetAverageNumber(C))
+            if (T6Utils.GetAverageNumber(A) > T6Utils.GetAverageNumber(B) && T6Utils.GetAverageNumber(A) > T6Utils.GetAverageNumber(C))
             {
-                Console.WriteLine("The max average number from the three arrays is: " + GetAverageNumber(A));
+                Console.WriteLine("The max average number from the three arrays is: " + T6Utils.GetAverageNumber(A));
             }
-            else if (GetAverageNumber(B) > GetAverageNumber(A) && GetAverageNumber(B) > GetAverageNumber(C))
+            else if (T6Utils.GetAverageNumber(B) > T6Utils.GetAverageNumber(A) && T6Utils.GetAverageNumber(B) > T6Utils.GetAverageNumber(C))
             {
-                Console.WriteLine("The max average number from the three arrays is: " + GetAverageNumber(B));
+                Console.WriteLine("The max average number from the three arrays is: " + T6Utils.GetAverageNumber(B));
             }
-            else if (GetAverageNumber(C) > GetAverageNumber(A) && GetAverageNumber(C) > GetAverageNumber(B))
+            else if (T6Utils.GetAverageNumber(C) > T6Utils.GetAverageNumber(A) && T6Utils.GetAverageNumber(C) > T6Utils.GetAverageNumber(B))
             {
-                Console.WriteLine("The max average number from the three arrays is: " + GetAverageNumber(C));
+                Console.WriteLine("The max average number from the three arrays is: " + T6Utils.GetAverageNumber(C));
             }
             else
             {
@@ -108,33 +104,6 @@ namespace T6AverageNumbersOfArrays
                 recalculation = a + (Math.Pow(n, 2) + 1) * b;
             }
             Console.WriteLine("The recalculation of the elements of the array is: " + recalculation);
-        }
-
-        public static double GetAverageNumber(int[]numbers)
-        {
-         
-            List<int> numbersInRange = new List<int>(numbers); //Правя си List от масива, за да мога да включа числата от интервала.
-            double averageNum = 0;
-            foreach (int num in numbers)
-            {
-
-                if (num > -100 && num < 100)
-                {
-                    numbersInRange.Add(num);
-                }
-  
-            }
-            averageNum = numbersInRange.Sum() / numbersInRange.Count();
-            return averageNum;
-            
-        }
-
-        public static void PrintArray(int[] numbers)
-        {
-            foreach (int i in numbers)
-            {
-                Console.Write(i + "  ");
-            }
         }
     }
 }
